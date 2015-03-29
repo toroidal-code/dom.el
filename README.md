@@ -81,9 +81,10 @@ Example:
 ```elisp
 (let ((doc (dom-make-document-from-xml 
            (with-temp-buffer
-  (insert-file-contents "sample.xml")
-  (libxml-parse-xml-region 
-    (point-min) (point-max)))))))
+             (insert-file-contents "sample.xml")
+             (libxml-parse-xml-region 
+               (point-min) (point-max))))))
+   (some-dom-thing-here doc))
 ```
 
 ### Other Document functions
