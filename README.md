@@ -1,4 +1,6 @@
-# dom.el - DOM manipulation at it's finest #
+# dom.el #
+
+Pure emacs-lisp DOM manipulation at its finest
 
 Credit Where It's Due:
 ----------------------
@@ -34,7 +36,7 @@ share the same prefix.
 Function Documentation
 ----------------------
 
-### Exception DOMException ###
+### DOMException ###
 
 
 DOM operations only raise exceptions in "exceptional" circumstances,
@@ -42,17 +44,7 @@ i.e., when an operation is impossible to perform (either for logical
 reasons, because data is lost, or because the implementation has
 become unstable). In general, DOM methods return specific error
 values in ordinary processing situations, such as out-of-bound errors
-when using NodeList.
-
-Implementations should raise other exceptions under other
-circumstances. For example, implementations should raise an
-implementation-dependent exception if a null argument is passed.
-
-Some languages and object systems do not support the concept of
-exceptions. For such systems, error conditions may be indicated using
-native error reporting mechanisms. For some bindings, for example,
-methods may return error codes similar to those listed in the
-corresponding method descriptions.
+when using a list of nodes.
 
 ##### `(dom-exception EXCEPTION &rest DATA)` ####
 
@@ -82,11 +74,11 @@ directly derived from the Node interface, only with the prefix
 ##### `(dom-make-document-from-xml NODE)` ####
 
 Return a DOM document based on NODE.
-NODE is a node as returned by `libxml-parse-xml-region`.  
+NODE is a node as returned by `libxml-parse-xml-region`.
 The DOM nodes are created using `dom-make-node-from-xml`.
 
 Example:
-```
+```elisp
 (let ((doc (dom-make-document-from-xml 
            (with-temp-buffer
   (insert-file-contents "sample.xml")
@@ -155,30 +147,30 @@ OWNER is stored as the owner-document.
 
 #### Accessors
 
-`(dom-node-name NODE)`
+##### `(dom-node-name NODE)`
 
-`(dom-node-value NODE)`
+##### `(dom-node-value NODE)`
 
-`(dom-node-type NODE)`
+##### `(dom-node-type NODE)`
 
-`(dom-node-parent-nodes NODE)`
+##### `(dom-node-parent-nodes NODE)`
 
-`(dom-node-child-nodes NODE)`
+##### `(dom-node-child-nodes NODE)`
 
-`(dom-node-attributes NODE)`
+##### `(dom-node-attributes NODE)`
 
-`(dom-node-owner-document NODE)`
+##### `(dom-node-owner-document NODE)`
 
 
 #### Additional traversal functions
 
-`(dom-node-first-child NODE)`
+##### `(dom-node-first-child NODE)`
 
-`(dom-node-last-child NODE)`
+##### `(dom-node-last-child NODE)`
 
-`(dom-node-previous-sibling NODE)`
+##### `(dom-node-previous-sibling NODE)`
 
-`(dom-node-next-sibling NODE)`
+##### `(dom-node-next-sibling NODE)`
 
 #### Functions acting on the child nodes list
 
