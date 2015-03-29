@@ -1,0 +1,18 @@
+<book id="compiler">
+  <bookinfo>
+    <bookbiblio>
+      <title>My own book!</title>
+      <edition>First</edition>
+      <authorgroup>
+        <author>
+          <firstname>John</firstname>
+          <surname>Wiegley</surname>
+        </author>
+      </authorgroup>
+    </bookbiblio>
+  </bookinfo>
+  <chapter>
+    <title>A very small chapter</title>
+    <para>Wonder where the content is...</para>
+  </chapter>
+</book>
