@@ -1,4 +1,4 @@
-;;; dom.el --- DOM implementation
+;;; dom.el --- DOM implementation and manipulation library
 
 ;; Copyright (C) 2001  Alex Schroeder <alex@gnu.org>
 
@@ -7,7 +7,8 @@
 ;;      Katherine Whitlock <toroidal-code@gmail.com>
 ;; Maintainer: Katherine Whitlock
 ;; Version: 1.2
-;; Keywords: xml
+;; Keywords: xml, dom
+;; Package-Requires: ((cl-lib "0.5"))
 ;; URL: http://www.github.com/toroidal-code/dom.el/
 
 ;; This file is not part of GNU Emacs.
@@ -56,8 +57,8 @@
 ;; share the same prefix.
 
 ;;; Code:
-
-(require 'cl-lib)
+(eval-when-compile
+  (require 'cl-lib))
 (require 'xml)
 
 ;;; Exception DOMException
